@@ -83,15 +83,16 @@ async function syncFile({
   });
 
   // `::codeview` / `::assets` / `::preview` センチネルを、実ファイルから生成したブロックに展開する。
+  // レクチャー以外（トップページ・章の概要）でも呼ぶ。そちらで使えるのは行き先を明示した
+  // `::preview{src="<sec>/<lec>"}` だけで、他は警告を出して消える。
   const lecture = parseLectureRel(sourceDir);
-  if (lecture) {
-    body = await expandSentinels(body, {
-      lectureAbsDir: path.join(ROOT, ...sourceDir.split('/')),
-      sec: lecture.sec,
-      lec: lecture.lec,
-      base: config.base,
-    });
-  }
+  body = await expandSentinels(body, {
+    lectureAbsDir: path.join(ROOT, ...sourceDir.split('/')),
+    sec: lecture?.sec,
+    lec: lecture?.lec,
+    base: config.base,
+    where: sourceDir,
+  });
 
   const sidebar = srcFm.sidebar || {};
   const sidebarOrder = sidebar.order ?? defaultSidebarOrder;

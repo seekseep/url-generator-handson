@@ -161,6 +161,9 @@ function buildPreviewBlock({ base, sec, lec, demo, caption, height }) {
     `<figure class="lecture-preview">` +
     `<div class="lecture-preview__bar">` +
     `<button type="button" class="lecture-preview__reload" title="プレビューを再読み込み">↻ 再読み込み</button>` +
+    // 開発者ツールを開いて確かめる節があるので、iframe の外で開く導線も用意する。
+    `<a class="lecture-preview__open" href="${src}" target="_blank" rel="noopener"` +
+    ` title="プレビューを新しいタブで開く">↗ 新しいタブで開く</a>` +
     `</div>` +
     `<iframe class="lecture-preview__frame" src="${src}" title="ライブプレビュー" loading="lazy"${style}></iframe>` +
     cap +
@@ -170,18 +173,28 @@ function buildPreviewBlock({ base, sec, lec, demo, caption, height }) {
 
 /**
  * 本文中の `::codeview` / `::assets` / `::preview` センチネルを展開する。
- * current = { sec, lec }（このレクチャー）。lecture 以外の docs では素通しする。
+ * current = { sec, lec }（このレクチャー）。
+ *
+ * レクチャー以外の docs（トップページや章の概要）でも呼べる。ただし自分の `example/` を
+ * 持たないので、使えるのは行き先を明示した `::preview{src="<sec>/<lec>"}` だけ。
+ * `::codeview` / `::assets` と行き先の無い `::preview` は警告を出して行ごと消す。
  */
-export async function expandSentinels(body, { lectureAbsDir, sec, lec, base }) {
-  if (!sec || !lec) return body;
-  const exampleAbs = path.join(lectureAbsDir, EXAMPLE_DIR);
-  const where = `sections/${sec}/${lec}`;
+export async function expandSentinels(body, { lectureAbsDir, sec, lec, base, where: label }) {
+  const inLecture = Boolean(sec && lec);
+  const where = inLecture ? `sections/${sec}/${lec}` : (label || 'docs');
+  // レクチャー以外では、センチネルが1つも無ければ何もしない。
+  if (!inLecture && !/^::(codeview|preview|assets)\b/m.test(body)) return body;
+  const exampleAbs = inLecture ? path.join(lectureAbsDir, EXAMPLE_DIR) : null;
 
   const lines = body.split('\n');
   const out = [];
   for (const line of lines) {
     const cv = line.match(CODEVIEW_RE);
     if (cv) {
+      if (!inLecture) {
+        console.warn(`[sentinels] ::codeview is only available in a LECTURE.md (${where}, skipped)`);
+        continue;
+      }
       const attrs = parseAttrs(cv[2]);
       const rel = normalizeCodePath(attrs.path);
       if (!rel) {
@@ -205,6 +218,10 @@ export async function expandSentinels(body, { lectureAbsDir, sec, lec, base }) {
     }
     const as = line.match(ASSETS_RE);
     if (as) {
+      if (!inLecture) {
+        console.warn(`[sentinels] ::assets is only available in a LECTURE.md (${where}, skipped)`);
+        continue;
+      }
       const label = as[1] ? as[1].trim() : '';
       const block = await buildAssetsBlock({ exampleAbs, sec, lec, base, label });
       if (block) {
@@ -226,6 +243,10 @@ export async function expandSentinels(body, { lectureAbsDir, sec, lec, base }) {
           tSec = parts[0];
           tLec = parts[1];
         }
+      }
+      if (!tSec || !tLec) {
+        console.warn(`[sentinels] ::preview outside a lecture needs src="<sec>/<lec>" (${where}, skipped)`);
+        continue;
       }
       out.push(buildPreviewBlock({
         base,
