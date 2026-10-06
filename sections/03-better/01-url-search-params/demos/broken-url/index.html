@@ -16,17 +16,16 @@
 
       h2 {
         font-size: 1em;
-        margin: 1.2em 0 0.3em;
+        margin: 1.4em 0 0.3em;
       }
 
-      code {
+      a {
         word-break: break-all;
-        background: #f3f3f3;
-        padding: 1px 4px;
       }
 
-      .read {
+      .note {
         margin: 0.3em 0 0;
+        color: #555;
       }
 
       .ng {
@@ -44,42 +43,39 @@
       <input id="title" value="A&amp;B社 向け/報告" />
     </p>
 
+    <p class="note">
+      下の2つは、同じ入力から作った URL です。<b>押して受け取り側を見比べてください。</b>
+    </p>
+
     <h2>文字列結合で作ったURL</h2>
-    <p><code id="joined"></code></p>
-    <p class="read">受け取り側が読み取る値：<span id="joinedRead" class="ng"></span></p>
+    <p><a id="joined" target="_blank"></a></p>
+    <p class="note ng">
+      押すと、件名が「A」だけになり、残りが別のパラメータとして増えています。
+    </p>
 
     <h2>URLSearchParams で作ったURL</h2>
-    <p><code id="encoded"></code></p>
-    <p class="read">受け取り側が読み取る値：<span id="encodedRead" class="ok"></span></p>
+    <p><a id="encoded" target="_blank"></a></p>
+    <p class="note ok">
+      押すと、入力したとおりの値が1つのパラメータとして届いています。
+    </p>
 
     <script>
       const titleInput = document.getElementById('title');
       const joined = document.getElementById('joined');
-      const joinedRead = document.getElementById('joinedRead');
       const encoded = document.getElementById('encoded');
-      const encodedRead = document.getElementById('encodedRead');
-
-      // 受け取り側が同じクエリ文字列をどう解釈するかを、その場で再現する。
-      function readBack(query) {
-        const params = new URLSearchParams(query);
-        const entries = [];
-
-        params.forEach((value, key) => {
-          entries.push(key + ' = 「' + value + '」');
-        });
-
-        return entries.join(' / ');
-      }
 
       function update() {
-        const joinedQuery = 'title=' + titleInput.value;
-        joined.textContent = 'docs.html?' + joinedQuery;
-        joinedRead.textContent = readBack(joinedQuery);
+        // 文字列結合で組み立てる（値の中の記号をそのまま URL に入れてしまう）
+        const joinedUrl = 'docs.html?title=' + titleInput.value;
+        joined.setAttribute('href', joinedUrl);
+        joined.textContent = joinedUrl;
 
+        // URLSearchParams で組み立てる（記号は自動で変換される）
         const params = new URLSearchParams();
         params.append('title', titleInput.value);
-        encoded.textContent = 'docs.html?' + params.toString();
-        encodedRead.textContent = readBack(params.toString());
+        const encodedUrl = 'docs.html?' + params.toString();
+        encoded.setAttribute('href', encodedUrl);
+        encoded.textContent = encodedUrl;
       }
 
       titleInput.addEventListener('input', update);

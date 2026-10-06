@@ -38,20 +38,27 @@ const MAX_FILE_BYTES = 200 * 1024;
 const PUBLISH_FLAG = 'docs';
 
 /**
- * レクチャーの source dir がプロジェクト (package.json あり) なら、配布 ZIP の URL を返す。
- * naming.mjs の命名規約 (<sec>-<lec>.zip) を build-downloads.mjs と共有する。対象でなければ null。
+ * レクチャーの source dir が配布 ZIP を持つなら、その URL を返す。対象でなければ null。
+ * naming.mjs の命名規約 (<sec>-<lec>.zip) を build-downloads.mjs と共有する。
  * 本文中に手書きした `./project.zip` リンクを transformLinks でこの URL に差し替えるために使う。
+ *
+ * build-downloads.mjs は project 方式 (package.json) と example 方式 (example/index.html) の
+ * どちらにも ZIP を出すので、両方を対象にする。
  */
+const ZIP_MARKERS = ['package.json', 'example/index.html'];
+
 async function resolveDownloadUrl(sourceDir, base) {
   const parsed = parseLectureRel(sourceDir);
   if (!parsed) return null;
-  try {
-    await stat(path.join(ROOT, sourceDir, 'package.json'));
-  } catch (e) {
-    if (e.code === 'ENOENT') return null;
-    throw e;
+  for (const marker of ZIP_MARKERS) {
+    try {
+      await stat(path.join(ROOT, sourceDir, ...marker.split('/')));
+      return downloadUrlFor(base, parsed.sec, parsed.lec);
+    } catch (e) {
+      if (e.code !== 'ENOENT') throw e;
+    }
   }
-  return downloadUrlFor(base, parsed.sec, parsed.lec);
+  return null;
 }
 
 async function syncFile({

@@ -126,8 +126,27 @@ shelfForm.addEventListener('submit', (event) => {
 ```
 :::
 
-行き先の `shelf.html` も、`docs.html` と `fulltext.html` と同じフォルダに置いてください。
-中身は受け取ったパラメータを並べるだけのページで、下の「完成例」から見られます。
+行き先の `shelf.html` も、まだ自分のフォルダにありません。これまでと同じようにコピーします。
+
+:::download
+[shelf.html を含む ZIP をダウンロード](./project.zip)
+:::
+
+解凍してできる `url-generator` の中から、**`shelf.html` だけ**を自分のフォルダにコピーしてください。
+これで受け取り側が3つそろいます。
+
+```text
+（自分の作業フォルダ）
+├── index.html       自分で書いているファイル
+├── docs.html        第2章で置いたもの
+├── fulltext.html    前の節で置いたもの
+└── shelf.html       ← 今回あらたに置くもの
+```
+
+:::warning
+ZIP には `index.html` も入っています（この節の完成版）。
+上書きすると書きかけのものが消えるので、コピーするのは `shelf.html` だけにしてください。
+:::
 
 項目が4つから3つに減っても、`forEach` の中は変わりません。
 `name` が `dept` でも `room` でも、`FormData` は同じように集めます。
