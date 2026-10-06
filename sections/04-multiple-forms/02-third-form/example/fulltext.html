@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <title>全文検索（受け取り側）</title>
+    <style>
+      body {
+        font-family: "Segoe UI", "Meiryo", sans-serif;
+        line-height: 1.7;
+        margin: 24px;
+      }
+      table {
+        border-collapse: collapse;
+      }
+      th,
+      td {
+        border: 1px solid #999;
+        padding: 4px 10px;
+        text-align: left;
+      }
+      th {
+        background: #e2efda;
+      }
+      .note {
+        color: #555;
+      }
+      .url {
+        word-break: break-all;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>全文検索（受け取り側）</h1>
+
+    <p class="note">
+      検索システムの代わりに置いてある、受け取ったパラメータを並べるだけのページです。
+      実際に使うときは、ここが本物の検索システムのURLに変わります。
+    </p>
+
+    <p>受け取ったURL：<span id="url" class="url"></span></p>
+
+    <h2>受け取ったパラメータ</h2>
+
+    <table>
+      <thead>
+        <tr>
+          <th>キー</th>
+          <th>値</th>
+        </tr>
+      </thead>
+      <tbody id="rows"></tbody>
+    </table>
+
+    <p id="empty" class="note" hidden>パラメータは1つも付いていません。</p>
+
+    <script>
+      const url = document.getElementById('url');
+      const rows = document.getElementById('rows');
+      const empty = document.getElementById('empty');
+
+      url.textContent = location.href;
+
+      // location.search は「?」から後ろの文字列。
+      // 受け取る側も URLSearchParams で読み解くのがいちばん簡単。
+      const params = new URLSearchParams(location.search);
+
+      let count = 0;
+
+      params.forEach((value, key) => {
+        const row = document.createElement('tr');
+        const keyCell = document.createElement('td');
+        const valueCell = document.createElement('td');
+
+        keyCell.textContent = key;
+        valueCell.textContent = value;
+
+        row.append(keyCell, valueCell);
+        rows.append(row);
+
+        count = count + 1;
+      });
+
+      if (count === 0) {
+        empty.hidden = false;
+      }
+    </script>
+  </body>
+</html>

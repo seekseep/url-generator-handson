@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="400" viewBox="0 0 880 400" font-family="'Hiragino Sans','Noto Sans JP','Yu Gothic','Segoe UI',sans-serif">
+<defs><marker id="aR" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 1 L9 5 L0 9 z" fill="#475569"/></marker><marker id="aRsub" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 1 L9 5 L0 9 z" fill="#94a3b8"/></marker></defs>
+<rect x="0" y="0" width="880" height="400" fill="#ffffff"/>
+<rect x="30" y="40" width="480" height="330" rx="16" fill="#f1f5f9" stroke="#94a3b8" stroke-width="3.5"/>
+<text x="70" y="78" text-anchor="start" font-size="17" fill="#475569" font-weight="600" font-family="'SFMono-Regular','Consolas','Noto Sans Mono','Courier New',monospace">index.html</text>
+<rect x="60" y="100" width="420" height="72" rx="16" fill="#dbeafe" stroke="#3b82f6" stroke-width="3.5"/>
+<text x="270" y="144" text-anchor="middle" font-size="21" fill="#0f172a" font-weight="700">1. 資料検索</text>
+<rect x="620" y="100" width="230" height="72" rx="16" fill="#dbeafe" stroke="#3b82f6" stroke-width="3.5"/>
+<text x="735" y="144" text-anchor="middle" font-size="17" fill="#475569" font-weight="600" font-family="'SFMono-Regular','Consolas','Noto Sans Mono','Courier New',monospace">docs.html</text>
+<path d="M486.00 136.00 L614.00 136.00" fill="none" stroke="#475569" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#aR)"/>
+<rect x="60" y="196" width="420" height="72" rx="16" fill="#dcfce7" stroke="#22c55e" stroke-width="3.5"/>
+<text x="270" y="240" text-anchor="middle" font-size="21" fill="#0f172a" font-weight="700">2. 全文検索</text>
+<rect x="620" y="196" width="230" height="72" rx="16" fill="#dcfce7" stroke="#22c55e" stroke-width="3.5"/>
+<text x="735" y="240" text-anchor="middle" font-size="17" fill="#475569" font-weight="600" font-family="'SFMono-Regular','Consolas','Noto Sans Mono','Courier New',monospace">fulltext.html</text>
+<path d="M486.00 232.00 L614.00 232.00" fill="none" stroke="#475569" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#aR)"/>
+<rect x="60" y="292" width="420" height="72" rx="16" fill="#ede9fe" stroke="#8b5cf6" stroke-width="3.5"/>
+<text x="270" y="336" text-anchor="middle" font-size="21" fill="#0f172a" font-weight="700">3. 棚検索</text>
+<rect x="620" y="292" width="230" height="72" rx="16" fill="#ede9fe" stroke="#8b5cf6" stroke-width="3.5"/>
+<text x="735" y="336" text-anchor="middle" font-size="17" fill="#475569" font-weight="600" font-family="'SFMono-Regular','Consolas','Noto Sans Mono','Courier New',monospace">shelf.html</text>
+<path d="M486.00 328.00 L614.00 328.00" fill="none" stroke="#475569" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#aR)"/>
+</svg>

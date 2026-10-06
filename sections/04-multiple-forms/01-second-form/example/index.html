@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <title>検索URLを作る</title>
+    <style>
+      table {
+        border-collapse: collapse;
+      }
+
+      th,
+      td {
+        border: 1px solid #999;
+        padding: 4px 10px;
+        text-align: left;
+      }
+
+      th {
+        background: #e2efda;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>検索URLを作る</h1>
+
+    <h2>1. 資料検索</h2>
+
+    <form id="docsForm">
+      <table>
+        <thead>
+          <tr>
+            <th>項目</th>
+            <th>パラメータ名</th>
+            <th>値</th>
+            <th>参考値</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><label for="docs-dept">部署コード</label></td>
+            <td>dept</td>
+            <td><input id="docs-dept" name="dept" required /></td>
+            <td>25、ALL</td>
+          </tr>
+          <tr>
+            <td><label for="docs-title">件名</label></td>
+            <td>title</td>
+            <td><input id="docs-title" name="title" /></td>
+            <td>月次報告</td>
+          </tr>
+          <tr>
+            <td><label for="docs-author">作成者</label></td>
+            <td>author</td>
+            <td><input id="docs-author" name="author" /></td>
+            <td>山田</td>
+          </tr>
+          <tr>
+            <td><label for="docs-date">作成日</label></td>
+            <td>date</td>
+            <td><input id="docs-date" name="date" type="date" /></td>
+            <td>2026-04-01</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p>
+        <button type="submit">生成</button>
+      </p>
+    </form>
+
+    <p>
+      生成されたURL：<span id="docsResult"></span>
+    </p>
+
+    <h2>2. 全文検索</h2>
+
+    <form id="fulltextForm">
+      <table>
+        <thead>
+          <tr>
+            <th>項目</th>
+            <th>パラメータ名</th>
+            <th>値</th>
+            <th>参考値</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><label for="fulltext-dept">部署コード</label></td>
+            <td>dept</td>
+            <td><input id="fulltext-dept" name="dept" required /></td>
+            <td>25、ALL</td>
+          </tr>
+          <tr>
+            <td><label for="fulltext-word1">検索語句(1)</label></td>
+            <td>word1</td>
+            <td><input id="fulltext-word1" name="word1" /></td>
+            <td>安全</td>
+          </tr>
+          <tr>
+            <td><label for="fulltext-word2">検索語句(2)</label></td>
+            <td>word2</td>
+            <td><input id="fulltext-word2" name="word2" /></td>
+            <td>点検</td>
+          </tr>
+          <tr>
+            <td><label for="fulltext-word3">検索語句(3)</label></td>
+            <td>word3</td>
+            <td><input id="fulltext-word3" name="word3" /></td>
+            <td></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p>
+        <button type="submit">生成</button>
+      </p>
+    </form>
+
+    <p>
+      生成されたURL：<span id="fulltextResult"></span>
+    </p>
+
+    <script>
+      // 資料検索
+      const docsForm = document.getElementById('docsForm');
+      const docsResult = document.getElementById('docsResult');
+
+      docsForm.addEventListener('submit', (event) => {
+        event.preventDefault();
+
+        const params = new URLSearchParams();
+
+        new FormData(docsForm).forEach((value, name) => {
+          if (value !== '') {
+            params.append(name, value);
+          }
+        });
+
+        const url = 'docs.html?' + params.toString();
+
+        const link = document.createElement('a');
+        link.setAttribute('href', url);
+        link.setAttribute('target', '_blank');
+        link.textContent = url;
+
+        docsResult.textContent = '';
+        docsResult.append(link);
+      });
+
+      // 全文検索
+      // 資料検索とよく似た処理だが、まとめずにそれぞれ書く。
+      // 行き先も項目も別物なので、片方を直してもう片方が壊れるのを避ける。
+      const fulltextForm = document.getElementById('fulltextForm');
+      const fulltextResult = document.getElementById('fulltextResult');
+
+      fulltextForm.addEventListener('submit', (event) => {
+        event.preventDefault();
+
+        const params = new URLSearchParams();
+
+        new FormData(fulltextForm).forEach((value, name) => {
+          if (value !== '') {
+            params.append(name, value);
+          }
+        });
+
+        const url = 'fulltext.html?' + params.toString();
+
+        const link = document.createElement('a');
+        link.setAttribute('href', url);
+        link.setAttribute('target', '_blank');
+        link.textContent = url;
+
+        fulltextResult.textContent = '';
+        fulltextResult.append(link);
+      });
+    </script>
+  </body>
+</html>

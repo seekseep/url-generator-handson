@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1060" height="360" viewBox="0 0 1060 360" font-family="'Hiragino Sans','Noto Sans JP','Yu Gothic','Segoe UI',sans-serif">
+<defs><marker id="aR" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 1 L9 5 L0 9 z" fill="#475569"/></marker><marker id="aRsub" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 1 L9 5 L0 9 z" fill="#94a3b8"/></marker></defs>
+<rect x="0" y="0" width="1060" height="360" fill="#ffffff"/>
+<text x="530" y="50" text-anchor="middle" font-size="21" fill="#0f172a" font-weight="700">同じ「部署コード」の欄を2つ置くとき</text>
+<text x="325" y="104" text-anchor="middle" font-size="17" fill="#475569" font-weight="600">1. 資料検索</text>
+<text x="595" y="104" text-anchor="middle" font-size="17" fill="#475569" font-weight="600">2. 全文検索</text>
+<rect x="40" y="124" width="140" height="70" rx="16" fill="#f1f5f9" stroke="#94a3b8" stroke-width="3.5"/>
+<text x="110" y="167" text-anchor="middle" font-size="21" fill="#0f172a" font-weight="700" font-family="'SFMono-Regular','Consolas','Noto Sans Mono','Courier New',monospace">id</text>
+<rect x="200" y="124" width="250" height="70" rx="16" fill="#dbeafe" stroke="#3b82f6" stroke-width="3.5"/>
+<text x="325" y="167" text-anchor="middle" font-size="17" fill="#475569" font-weight="600" font-family="'SFMono-Regular','Consolas','Noto Sans Mono','Courier New',monospace">docs-dept</text>
+<rect x="470" y="124" width="250" height="70" rx="16" fill="#dcfce7" stroke="#22c55e" stroke-width="3.5"/>
+<text x="595" y="167" text-anchor="middle" font-size="17" fill="#475569" font-weight="600" font-family="'SFMono-Regular','Consolas','Noto Sans Mono','Courier New',monospace">fulltext-dept</text>
+<text x="748" y="152" text-anchor="start" font-size="15" fill="#475569" font-weight="400">ページ全体で1つだけ</text>
+<text x="748" y="178" text-anchor="start" font-size="13" fill="#475569" font-weight="400">重ねると先に出てきた方だけが返る</text>
+<rect x="40" y="224" width="140" height="70" rx="16" fill="#f1f5f9" stroke="#94a3b8" stroke-width="3.5"/>
+<text x="110" y="267" text-anchor="middle" font-size="21" fill="#0f172a" font-weight="700" font-family="'SFMono-Regular','Consolas','Noto Sans Mono','Courier New',monospace">name</text>
+<rect x="200" y="224" width="250" height="70" rx="16" fill="#fef9c3" stroke="#f59e0b" stroke-width="3.5"/>
+<text x="325" y="267" text-anchor="middle" font-size="17" fill="#475569" font-weight="600" font-family="'SFMono-Regular','Consolas','Noto Sans Mono','Courier New',monospace">dept</text>
+<rect x="470" y="224" width="250" height="70" rx="16" fill="#fef9c3" stroke="#f59e0b" stroke-width="3.5"/>
+<text x="595" y="267" text-anchor="middle" font-size="17" fill="#475569" font-weight="600" font-family="'SFMono-Regular','Consolas','Noto Sans Mono','Courier New',monospace">dept</text>
+<text x="748" y="252" text-anchor="start" font-size="15" fill="#475569" font-weight="400">フォームごとに同じでよい</text>
+<text x="748" y="278" text-anchor="start" font-size="13" fill="#475569" font-weight="400">受け取り側が待っている名前</text>
+</svg>

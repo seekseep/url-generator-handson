@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="240" viewBox="0 0 880 240" font-family="'Hiragino Sans','Noto Sans JP','Yu Gothic','Segoe UI',sans-serif">
+<defs><marker id="aR" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 1 L9 5 L0 9 z" fill="#475569"/></marker><marker id="aRsub" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 1 L9 5 L0 9 z" fill="#94a3b8"/></marker></defs>
+<rect x="0" y="0" width="880" height="240" fill="#ffffff"/>
+<rect x="40" y="72" width="230" height="76" rx="16" fill="#f1f5f9" stroke="#94a3b8" stroke-width="3.5"/>
+<text x="155" y="118" text-anchor="middle" font-size="17" fill="#475569" font-weight="600">文字列のURL</text>
+<svg x="408.0" y="53.3" width="84.0" height="84.0" viewBox="0 0 36 36"><path fill="#8899A6" d="M15 9l6-6s6-6 12 0 0 12 0 12l-8 8s-6 6-12 0c-1.125-1.125-1.822-2.62-1.822-2.62l3.353-3.348S14.396 18.396 16 20c0 0 3 3 6 0l8-8s3-3 0-6-6 0-6 0l-3.729 3.729s-1.854-1.521-5.646-.354L15 9z"/><path fill="#8899A6" d="M20.845 27l-6 6s-6 6-12 0 0-12 0-12l8-8s6-6 12 0c1.125 1.125 1.822 2.62 1.822 2.62l-3.354 3.349s.135-1.365-1.469-2.969c0 0-3-3-6 0l-8 8s-3 3 0 6 6 0 6 0l3.729-3.729s1.854 1.521 5.646.354l-.374.375z"/></svg>
+<text x="450" y="164.14" text-anchor="middle" font-size="21" fill="#0f172a" font-weight="700">リンク</text>
+<svg x="718.0" y="53.3" width="84.0" height="84.0" viewBox="0 0 36 36"><path fill="#CCD6DD" d="M36 22c0 2.209-1.791 4-4 4H4c-2.209 0-4-1.791-4-4V4c0-2.209 1.791-4 4-4h28c2.209 0 4 1.791 4 4v18z"/><path fill="#5DADEC" d="M4 4h28v18H4z"/><path fill="#CCD6DD" d="M13 26h10v6H13z"/><path fill="#9AAAB4" d="M13 26h10v2H13z"/><path fill="#E1E8ED" d="M36 33c0-1.657-1.343-3-3-3H3c-1.657 0-3 1.343-3 3s1.343 3 3 3h30c1.657 0 3-1.343 3-3z"/><path fill="#F5F8FA" d="M3 32h2v2H3zm4 0h2v2H7zm4 0h2v2h-2zm4 0h2v2h-2zm4 0h2v2h-2zm4 0h2v2h-2zm4 0h2v2h-2zm4 0h2v2h-2z"/></svg>
+<text x="760" y="164.14" text-anchor="middle" font-size="21" fill="#0f172a" font-weight="700">docs.html</text>
+<path d="M276.00 110.00 L402.00 110.00" fill="none" stroke="#475569" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#aR)"/>
+<text x="339" y="99.45" text-anchor="middle" font-size="17" fill="#0f172a" font-weight="600">innerHTML</text>
+<path d="M498.00 110.00 L558.23 110.00" fill="none" stroke="#475569" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M644.95 110.00 L705.19 110.00" fill="none" stroke="#475569" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#aR)"/>
+<text x="601.594" y="115.95" text-anchor="middle" font-size="17" fill="#0f172a" font-weight="600">クリック</text>
+<text x="440" y="205" text-anchor="middle" font-size="15" fill="#475569" font-weight="400">コピーして貼り直さなくても、押せば開けるようにする</text>
+</svg>

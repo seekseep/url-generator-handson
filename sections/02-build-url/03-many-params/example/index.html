@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <title>資料検索のURLを作る</title>
+    <style>
+      table {
+        border-collapse: collapse;
+      }
+
+      th,
+      td {
+        border: 1px solid #999;
+        padding: 4px 10px;
+        text-align: left;
+      }
+
+      th {
+        background: #e2efda;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>資料検索のURLを作る</h1>
+
+    <table>
+      <thead>
+        <tr>
+          <th>項目</th>
+          <th>パラメータ名</th>
+          <th>値</th>
+          <th>参考値</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>部署コード</td>
+          <td>dept</td>
+          <td><input id="dept" /></td>
+          <td>25、ALL</td>
+        </tr>
+        <tr>
+          <td>件名</td>
+          <td>title</td>
+          <td><input id="title" /></td>
+          <td>月次報告</td>
+        </tr>
+        <tr>
+          <td>作成者</td>
+          <td>author</td>
+          <td><input id="author" /></td>
+          <td>山田</td>
+        </tr>
+        <tr>
+          <td>作成日</td>
+          <td>date</td>
+          <td><input id="date" /></td>
+          <td>2026-04-01</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p>
+      <button id="generateButton">生成</button>
+    </p>
+
+    <p>
+      生成されたURL：<span id="result"></span>
+    </p>
+
+    <script>
+      const deptInput = document.getElementById('dept');
+      const titleInput = document.getElementById('title');
+      const authorInput = document.getElementById('author');
+      const dateInput = document.getElementById('date');
+      const generateButton = document.getElementById('generateButton');
+      const result = document.getElementById('result');
+
+      generateButton.addEventListener('click', () => {
+        // 「?」から後ろの部分（クエリ文字列）を1つずつ足していく。
+        let query = '';
+
+        // 2つ目以降の前には「&」が必要なので、
+        // すでに何か入っているかを毎回確かめることになる。
+        if (deptInput.value !== '') {
+          if (query !== '') {
+            query = query + '&';
+          }
+          query = query + 'dept=' + deptInput.value;
+        }
+
+        if (titleInput.value !== '') {
+          if (query !== '') {
+            query = query + '&';
+          }
+          query = query + 'title=' + titleInput.value;
+        }
+
+        if (authorInput.value !== '') {
+          if (query !== '') {
+            query = query + '&';
+          }
+          query = query + 'author=' + authorInput.value;
+        }
+
+        if (dateInput.value !== '') {
+          if (query !== '') {
+            query = query + '&';
+          }
+          query = query + 'date=' + dateInput.value;
+        }
+
+        const url = 'docs.html?' + query;
+
+        result.innerHTML = '<a href="' + url + '" target="_blank">' + url + '</a>';
+      });
+    </script>
+  </body>
+</html>

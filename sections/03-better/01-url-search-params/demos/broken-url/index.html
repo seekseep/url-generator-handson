@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <title>文字列結合とURLSearchParamsの違い</title>
+    <style>
+      body {
+        font-family: "Segoe UI", "Meiryo", sans-serif;
+        line-height: 1.7;
+        margin: 16px;
+      }
+
+      input {
+        width: 22em;
+      }
+
+      h2 {
+        font-size: 1em;
+        margin: 1.2em 0 0.3em;
+      }
+
+      code {
+        word-break: break-all;
+        background: #f3f3f3;
+        padding: 1px 4px;
+      }
+
+      .read {
+        margin: 0.3em 0 0;
+      }
+
+      .ng {
+        color: #b00020;
+      }
+
+      .ok {
+        color: #1b6b2f;
+      }
+    </style>
+  </head>
+  <body>
+    <p>
+      件名
+      <input id="title" value="A&amp;B社 向け/報告" />
+    </p>
+
+    <h2>文字列結合で作ったURL</h2>
+    <p><code id="joined"></code></p>
+    <p class="read">受け取り側が読み取る値：<span id="joinedRead" class="ng"></span></p>
+
+    <h2>URLSearchParams で作ったURL</h2>
+    <p><code id="encoded"></code></p>
+    <p class="read">受け取り側が読み取る値：<span id="encodedRead" class="ok"></span></p>
+
+    <script>
+      const titleInput = document.getElementById('title');
+      const joined = document.getElementById('joined');
+      const joinedRead = document.getElementById('joinedRead');
+      const encoded = document.getElementById('encoded');
+      const encodedRead = document.getElementById('encodedRead');
+
+      // 受け取り側が同じクエリ文字列をどう解釈するかを、その場で再現する。
+      function readBack(query) {
+        const params = new URLSearchParams(query);
+        const entries = [];
+
+        params.forEach((value, key) => {
+          entries.push(key + ' = 「' + value + '」');
+        });
+
+        return entries.join(' / ');
+      }
+
+      function update() {
+        const joinedQuery = 'title=' + titleInput.value;
+        joined.textContent = 'docs.html?' + joinedQuery;
+        joinedRead.textContent = readBack(joinedQuery);
+
+        const params = new URLSearchParams();
+        params.append('title', titleInput.value);
+        encoded.textContent = 'docs.html?' + params.toString();
+        encodedRead.textContent = readBack(params.toString());
+      }
+
+      titleInput.addEventListener('input', update);
+      update();
+    </script>
+  </body>
+</html>

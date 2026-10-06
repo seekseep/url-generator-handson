@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="300" viewBox="0 0 900 300" font-family="'Hiragino Sans','Noto Sans JP','Yu Gothic','Segoe UI',sans-serif">
+<defs><marker id="aR" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 1 L9 5 L0 9 z" fill="#475569"/></marker><marker id="aRsub" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 1 L9 5 L0 9 z" fill="#94a3b8"/></marker></defs>
+<rect x="0" y="0" width="900" height="300" fill="#ffffff"/>
+<rect x="50" y="90" width="230" height="80" rx="16" fill="#dbeafe" stroke="#3b82f6" stroke-width="3.5"/>
+<text x="165" y="138" text-anchor="middle" font-size="21" fill="#0f172a" font-weight="700" font-family="'SFMono-Regular','Consolas','Noto Sans Mono','Courier New',monospace">docs.html</text>
+<text x="165" y="205" text-anchor="middle" font-size="17" fill="#475569" font-weight="600">行き先のページ</text>
+<rect x="300" y="90" width="70" height="80" rx="16" fill="#f1f5f9" stroke="#94a3b8" stroke-width="3.5"/>
+<text x="335" y="140" text-anchor="middle" font-size="26" fill="#0f172a" font-weight="700" font-family="'SFMono-Regular','Consolas','Noto Sans Mono','Courier New',monospace">?</text>
+<text x="335" y="205" text-anchor="middle" font-size="17" fill="#475569" font-weight="600">区切り</text>
+<rect x="390" y="90" width="460" height="80" rx="16" fill="#dcfce7" stroke="#22c55e" stroke-width="3.5"/>
+<text x="620" y="138" text-anchor="middle" font-size="21" fill="#0f172a" font-weight="700" font-family="'SFMono-Regular','Consolas','Noto Sans Mono','Courier New',monospace">title=月次報告</text>
+<text x="500" y="205" text-anchor="middle" font-size="17" fill="#475569" font-weight="600">キー</text>
+<text x="740" y="205" text-anchor="middle" font-size="17" fill="#475569" font-weight="600">値</text>
+<text x="500" y="232" text-anchor="middle" font-size="13" fill="#475569" font-weight="400">検索システムが決めている</text>
+<text x="740" y="232" text-anchor="middle" font-size="13" fill="#475569" font-weight="400">入力された文字</text>
+<text x="450" y="45" text-anchor="middle" font-size="21" fill="#0f172a" font-weight="700">この3つをつなげた1本の文字列が URL になる</text>
+</svg>

@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <title>資料検索のURLを作る</title>
+  </head>
+  <body>
+    <h1>資料検索のURLを作る</h1>
+
+    <p>
+      件名
+      <input id="title" value="月次報告" />
+    </p>
+
+    <p>
+      <button id="generateButton">生成</button>
+    </p>
+
+    <p>
+      生成されたURL：<span id="result"></span>
+    </p>
+
+    <script>
+      const titleInput = document.getElementById('title');
+      const generateButton = document.getElementById('generateButton');
+      const result = document.getElementById('result');
+
+      generateButton.addEventListener('click', () => {
+        // 行き先は、同じフォルダにある docs.html。
+        // 検索システムの代わりに、受け取った値を並べるだけのページを置いてある。
+        const url = 'docs.html?title=' + titleInput.value;
+
+        result.textContent = url;
+      });
+    </script>
+  </body>
+</html>

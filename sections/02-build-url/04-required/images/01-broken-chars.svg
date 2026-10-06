@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="420" viewBox="0 0 900 420" font-family="'Hiragino Sans','Noto Sans JP','Yu Gothic','Segoe UI',sans-serif">
+<defs><marker id="aR" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 1 L9 5 L0 9 z" fill="#475569"/></marker><marker id="aRsub" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 1 L9 5 L0 9 z" fill="#94a3b8"/></marker></defs>
+<rect x="0" y="0" width="900" height="420" fill="#ffffff"/>
+<rect x="50" y="50" width="800" height="68" rx="16" fill="#fef9c3" stroke="#f59e0b" stroke-width="3.5"/>
+<text x="450" y="92" text-anchor="middle" font-size="21" fill="#0f172a" font-weight="700">件名に  A&amp;B社 報告  と入力した</text>
+<rect x="50" y="196" width="800" height="68" rx="16" fill="#fee2e2" stroke="#ef4444" stroke-width="3.5"/>
+<text x="450" y="238" text-anchor="middle" font-size="21" fill="#0f172a" font-weight="700" font-family="'SFMono-Regular','Consolas','Noto Sans Mono','Courier New',monospace">docs.html?title=A&amp;B社 報告</text>
+<rect x="140" y="330" width="290" height="66" rx="16" fill="#f1f5f9" stroke="#94a3b8" stroke-width="3.5"/>
+<text x="285" y="371" text-anchor="middle" font-size="17" fill="#475569" font-weight="600" font-family="'SFMono-Regular','Consolas','Noto Sans Mono','Courier New',monospace">title = A</text>
+<rect x="470" y="330" width="290" height="66" rx="16" fill="#f1f5f9" stroke="#94a3b8" stroke-width="3.5"/>
+<text x="615" y="371" text-anchor="middle" font-size="17" fill="#475569" font-weight="600" font-family="'SFMono-Regular','Consolas','Noto Sans Mono','Courier New',monospace">B社 報告 = （空）</text>
+<path d="M450.00 124.00 L450.00 140.50" fill="none" stroke="#475569" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M450.00 173.50 L450.00 190.00" fill="none" stroke="#475569" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#aR)"/>
+<text x="450" y="162.95" text-anchor="middle" font-size="17" fill="#0f172a" font-weight="600">文字列結合</text>
+<path d="M403.15 267.77 L330.61 326.23" fill="none" stroke="#94a3b8" stroke-width="2.0" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#aRsub)"/>
+<path d="M496.85 267.77 L569.39 326.23" fill="none" stroke="#94a3b8" stroke-width="2.0" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#aRsub)"/>
+<text x="450" y="300" text-anchor="middle" font-size="15" fill="#475569" font-weight="400">受け取り側は「&amp;」をパラメータの区切りとして読む</text>
+</svg>

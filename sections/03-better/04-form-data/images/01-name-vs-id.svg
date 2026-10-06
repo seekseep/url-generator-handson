@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="330" viewBox="0 0 900 330" font-family="'Hiragino Sans','Noto Sans JP','Yu Gothic','Segoe UI',sans-serif">
+<defs><marker id="aR" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 1 L9 5 L0 9 z" fill="#475569"/></marker><marker id="aRsub" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 1 L9 5 L0 9 z" fill="#94a3b8"/></marker></defs>
+<rect x="0" y="0" width="900" height="330" fill="#ffffff"/>
+<rect x="300" y="50" width="300" height="72" rx="16" fill="#fef9c3" stroke="#f59e0b" stroke-width="3.5"/>
+<text x="450" y="94" text-anchor="middle" font-size="15" fill="#475569" font-weight="400" font-family="'SFMono-Regular','Consolas','Noto Sans Mono','Courier New',monospace">&lt;input id="dept" name="dept"&gt;</text>
+<rect x="60" y="200" width="340" height="90" rx="16" fill="#dbeafe" stroke="#3b82f6" stroke-width="3.5"/>
+<text x="230" y="238" text-anchor="middle" font-size="21" fill="#0f172a" font-weight="700" font-family="'SFMono-Regular','Consolas','Noto Sans Mono','Courier New',monospace">id</text>
+<text x="230" y="270" text-anchor="middle" font-size="17" fill="#475569" font-weight="600">label の for と結びつける</text>
+<rect x="500" y="200" width="340" height="90" rx="16" fill="#dcfce7" stroke="#22c55e" stroke-width="3.5"/>
+<text x="670" y="238" text-anchor="middle" font-size="21" fill="#0f172a" font-weight="700" font-family="'SFMono-Regular','Consolas','Noto Sans Mono','Courier New',monospace">name</text>
+<text x="670" y="270" text-anchor="middle" font-size="17" fill="#475569" font-weight="600">送るときのキーになる</text>
+<path d="M395.33 125.51 L297.13 196.49" fill="none" stroke="#94a3b8" stroke-width="2.0" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#aRsub)"/>
+<path d="M504.67 125.51 L602.87 196.49" fill="none" stroke="#94a3b8" stroke-width="2.0" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#aRsub)"/>
+<text x="450" y="160" text-anchor="middle" font-size="15" fill="#475569" font-weight="400">同じ文字列を書いているが、使われ方は別</text>
+</svg>

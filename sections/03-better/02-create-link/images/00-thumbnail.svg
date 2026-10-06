@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="250" viewBox="0 0 880 250" font-family="'Hiragino Sans','Noto Sans JP','Yu Gothic','Segoe UI',sans-serif">
+<defs><marker id="aR" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 1 L9 5 L0 9 z" fill="#475569"/></marker><marker id="aRsub" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 1 L9 5 L0 9 z" fill="#94a3b8"/></marker></defs>
+<rect x="0" y="0" width="880" height="250" fill="#ffffff"/>
+<rect x="40" y="80" width="280" height="80" rx="16" fill="#fee2e2" stroke="#ef4444" stroke-width="3.5"/>
+<text x="180" y="115" text-anchor="middle" font-size="17" fill="#475569" font-weight="600">文字列でタグを書く</text>
+<text x="180" y="145" text-anchor="middle" font-size="13" fill="#475569" font-weight="400" font-family="'SFMono-Regular','Consolas','Noto Sans Mono','Courier New',monospace">'&lt;a href="' + url + '"&gt;'</text>
+<rect x="560" y="80" width="290" height="80" rx="16" fill="#dcfce7" stroke="#22c55e" stroke-width="3.5"/>
+<text x="705" y="115" text-anchor="middle" font-size="17" fill="#475569" font-weight="600">要素として作る</text>
+<text x="705" y="145" text-anchor="middle" font-size="13" fill="#475569" font-weight="400" font-family="'SFMono-Regular','Consolas','Noto Sans Mono','Courier New',monospace">createElement('a')</text>
+<path d="M326.00 120.00 L396.64 120.00" fill="none" stroke="#475569" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M483.36 120.00 L554.00 120.00" fill="none" stroke="#475569" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#aR)"/>
+<text x="440" y="125.95" text-anchor="middle" font-size="17" fill="#0f172a" font-weight="600">書き換え</text>
+<text x="440" y="215" text-anchor="middle" font-size="15" fill="#475569" font-weight="400">タグの文字列を自分で組み立てない</text>
+</svg>

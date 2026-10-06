@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <title>資料検索のURLを作る</title>
+    <style>
+      table {
+        border-collapse: collapse;
+      }
+
+      th,
+      td {
+        border: 1px solid #999;
+        padding: 4px 10px;
+        text-align: left;
+      }
+
+      th {
+        background: #e2efda;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>資料検索のURLを作る</h1>
+
+    <form id="searchForm">
+      <table>
+        <thead>
+          <tr>
+            <th>項目</th>
+            <th>パラメータ名</th>
+            <th>値</th>
+            <th>参考値</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><label for="dept">部署コード</label></td>
+            <td>dept</td>
+            <td><input id="dept" name="dept" required /></td>
+            <td>25、ALL</td>
+          </tr>
+          <tr>
+            <td><label for="title">件名</label></td>
+            <td>title</td>
+            <td><input id="title" name="title" /></td>
+            <td>月次報告</td>
+          </tr>
+          <tr>
+            <td><label for="author">作成者</label></td>
+            <td>author</td>
+            <td><input id="author" name="author" /></td>
+            <td>山田</td>
+          </tr>
+          <tr>
+            <td><label for="date">作成日</label></td>
+            <td>date</td>
+            <td><input id="date" name="date" type="date" /></td>
+            <td>2026-04-01</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p>
+        <button type="submit">生成</button>
+      </p>
+    </form>
+
+    <p>
+      生成されたURL：<span id="result"></span>
+    </p>
+
+    <script>
+      const searchForm = document.getElementById('searchForm');
+      const result = document.getElementById('result');
+
+      searchForm.addEventListener('submit', (event) => {
+        event.preventDefault();
+
+        const params = new URLSearchParams();
+
+        // FormData はフォームの中の name 属性が付いた入力欄を
+        // 「name と値」の組でまとめて取り出す。
+        // 入力欄が増えても、ここを書き足す必要がなくなる。
+        new FormData(searchForm).forEach((value, name) => {
+          if (value !== '') {
+            params.append(name, value);
+          }
+        });
+
+        const url = 'docs.html?' + params.toString();
+
+        // リンクは文字列で組み立てず、要素として作る。
+        const link = document.createElement('a');
+        link.setAttribute('href', url);
+        link.setAttribute('target', '_blank');
+        link.textContent = url;
+
+        result.textContent = '';
+        result.append(link);
+      });
+    </script>
+  </body>
+</html>

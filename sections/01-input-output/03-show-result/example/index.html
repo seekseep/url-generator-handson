@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <title>資料検索のURLを作る</title>
+  </head>
+  <body>
+    <h1>資料検索のURLを作る</h1>
+
+    <p>
+      件名
+      <input id="myInput" value="月次報告" />
+    </p>
+
+    <p>
+      <button id="showButton">表示</button>
+    </p>
+
+    <p>
+      入力した値：<span id="result"></span>
+    </p>
+
+    <script>
+      const myInput = document.getElementById('myInput');
+      const showButton = document.getElementById('showButton');
+      const result = document.getElementById('result');
+
+      showButton.addEventListener('click', () => {
+        // textContent は受け取った文字列をそのまま文字として置く。
+        // タグに解釈されないので、入力値を表示するときはこちらを使う。
+        result.textContent = myInput.value;
+      });
+    </script>
+  </body>
+</html>

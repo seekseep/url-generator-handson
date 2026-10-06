@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <title>資料検索のURLを作る</title>
+  </head>
+  <body>
+    <h1>資料検索のURLを作る</h1>
+
+    <p>
+      件名
+      <input id="myInput" value="月次報告" />
+    </p>
+
+    <p>
+      <b>F12</b> キーで開発者ツールを開き、<b>Console</b> タブを見てください。
+      <b>月次報告</b> と出ていれば、入力欄の値が JavaScript から取れています。
+    </p>
+
+    <script>
+      const myInput = document.getElementById('myInput');
+      console.log(myInput.value);
+    </script>
+  </body>
+</html>

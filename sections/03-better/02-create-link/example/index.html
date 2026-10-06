@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <title>資料検索のURLを作る</title>
+    <style>
+      table {
+        border-collapse: collapse;
+      }
+
+      th,
+      td {
+        border: 1px solid #999;
+        padding: 4px 10px;
+        text-align: left;
+      }
+
+      th {
+        background: #e2efda;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>資料検索のURLを作る</h1>
+
+    <table>
+      <thead>
+        <tr>
+          <th>項目</th>
+          <th>パラメータ名</th>
+          <th>値</th>
+          <th>参考値</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>部署コード</td>
+          <td>dept</td>
+          <td><input id="dept" /></td>
+          <td>25、ALL</td>
+        </tr>
+        <tr>
+          <td>件名</td>
+          <td>title</td>
+          <td><input id="title" /></td>
+          <td>月次報告</td>
+        </tr>
+        <tr>
+          <td>作成者</td>
+          <td>author</td>
+          <td><input id="author" /></td>
+          <td>山田</td>
+        </tr>
+        <tr>
+          <td>作成日</td>
+          <td>date</td>
+          <td><input id="date" /></td>
+          <td>2026-04-01</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p>
+      <button id="generateButton">生成</button>
+    </p>
+
+    <p>
+      生成されたURL：<span id="result"></span>
+    </p>
+
+    <script>
+      const deptInput = document.getElementById('dept');
+      const titleInput = document.getElementById('title');
+      const authorInput = document.getElementById('author');
+      const dateInput = document.getElementById('date');
+      const generateButton = document.getElementById('generateButton');
+      const result = document.getElementById('result');
+
+      generateButton.addEventListener('click', () => {
+        // 部署コードが無いと検索システム側がエラーになるので、ここで止める。
+        if (deptInput.value === '') {
+          alert('部署コードは必須です。');
+          return;
+        }
+
+        // クエリ文字列を組み立てる道具。
+        // 「&」でつなぐのも、空白や日本語の変換も URLSearchParams がやってくれる。
+        const params = new URLSearchParams();
+
+        if (deptInput.value !== '') {
+          params.append('dept', deptInput.value);
+        }
+
+        if (titleInput.value !== '') {
+          params.append('title', titleInput.value);
+        }
+
+        if (authorInput.value !== '') {
+          params.append('author', authorInput.value);
+        }
+
+        if (dateInput.value !== '') {
+          params.append('date', dateInput.value);
+        }
+
+        const url = 'docs.html?' + params.toString();
+
+        // リンクも文字列で組み立てるのをやめ、要素として作る。
+        const link = document.createElement('a');
+        link.setAttribute('href', url);
+        link.setAttribute('target', '_blank');
+        link.textContent = url;
+
+        // 前に作ったリンクが残らないように、中身を空にしてから入れる。
+        result.textContent = '';
+        result.append(link);
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <title>資料検索のURLを作る</title>
+  </head>
+  <body>
+    <h1>資料検索のURLを作る</h1>
+
+    <p>
+      件名
+      <input id="myInput" value="月次報告" />
+    </p>
+
+    <p>
+      <button id="showButton">表示</button>
+    </p>
+
+    <p>
+      <b>F12</b> キーで開発者ツールを開き、<b>Console</b> タブを見てください。
+      入力欄を書き換えて「表示」を押すたびに、そのときの値が1行ずつ増えます。
+    </p>
+
+    <script>
+      const myInput = document.getElementById('myInput');
+      const showButton = document.getElementById('showButton');
+
+      // ボタンが押されるたびに、そのときの入力値を読む。
+      // 読み込み時に1回だけ読むのでは、入力し直した値を拾えない。
+      showButton.addEventListener('click', () => {
+        console.log(myInput.value);
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <title>preventDefault を書かないとどうなるか</title>
+    <style>
+      body {
+        font-family: "Segoe UI", "Meiryo", sans-serif;
+        line-height: 1.7;
+        margin: 16px;
+      }
+
+      code {
+        word-break: break-all;
+        background: #f3f3f3;
+        padding: 1px 4px;
+      }
+
+      .note {
+        color: #555;
+      }
+    </style>
+  </head>
+  <body>
+    <p class="note">
+      このフォームには <code>submit</code> の処理を何も書いていません。
+      「生成」を押すと、ブラウザが自分でフォームを送信します。
+    </p>
+
+    <form>
+      <p>
+        <label for="title">件名</label>
+        <input id="title" name="title" value="月次報告" />
+      </p>
+      <p>
+        <button type="submit">生成</button>
+      </p>
+    </form>
+
+    <p>
+      いまこのページのURL：<br />
+      <code id="here"></code>
+    </p>
+
+    <p class="note">
+      押すと <code>?title=月次報告</code> が付いた<b>同じページ</b>が読み込み直されます。
+      ブラウザが勝手に組み立てたURLなので、行き先も形も自分では選べません。
+      だから <code>event.preventDefault()</code> で止めて、自分でURLを作ります。
+    </p>
+
+    <script>
+      document.getElementById('here').textContent = location.href;
+    </script>
+  </body>
+</html>
