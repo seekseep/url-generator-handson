@@ -35,10 +35,10 @@ HTML と JavaScript だけで作るので、ビルドもインストールも要
 
 | 章 | 内容 |
 |---|---|
-| [第1章 IDを使った入力と出力](./sections/01-input-output/README.md) | `getElementById` で値を取り、画面に出す |
-| [第2章 文字列結合でURLを作る](./sections/02-build-url/README.md) | `?` と `&` を自分でつないで URL を組み立てる |
-| [第3章 よりよく書く](./sections/03-better/README.md) | `URLSearchParams` / `createElement` / `form` の `submit` / `FormData` に置き換える |
-| [第4章 1つの画面に複数のフォームを並べる](./sections/04-multiple-forms/README.md) | 行き先の違うフォームを3つ並べて仕上げる |
+| [第1章 IDを使った入力と出力](./sections/01-input-output/01-get-value/LECTURE.md) | `getElementById` で値を取り、画面に出す |
+| [第2章 文字列結合でURLを作る](./sections/02-build-url/01-one-param/LECTURE.md) | `?` と `&` を自分でつないで URL を組み立てる |
+| [第3章 よりよく書く](./sections/03-better/01-url-search-params/LECTURE.md) | `URLSearchParams` / `createElement` / `form` の `submit` / `FormData` に置き換える |
+| [第4章 1つの画面に複数のフォームを並べる](./sections/04-multiple-forms/01-second-form/LECTURE.md) | 行き先の違うフォームを3つ並べて仕上げる |
 
 ## 始め方
 

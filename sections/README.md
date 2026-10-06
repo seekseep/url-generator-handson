@@ -31,27 +31,27 @@ sidebar:
 
 ## 章の一覧
 
-### [第1章 IDを使った入力と出力](./01-input-output/README.md)
+### 第1章 IDを使った入力と出力
 
 1. [入力した値を取り出す](./01-input-output/01-get-value/LECTURE.md)
 2. [ボタンを押したときに取り出す](./01-input-output/02-on-click/LECTURE.md)
 3. [画面に表示する](./01-input-output/03-show-result/LECTURE.md)
 
-### [第2章 文字列結合でURLを作る](./02-build-url/README.md)
+### 第2章 文字列結合でURLを作る
 
 1. [パラメータが1つのURLを作る](./02-build-url/01-one-param/LECTURE.md)
 2. [生成したURLをリンクにする](./02-build-url/02-link/LECTURE.md)
 3. [パラメータを増やす](./02-build-url/03-many-params/LECTURE.md)
 4. [必須の項目をチェックする](./02-build-url/04-required/LECTURE.md)
 
-### [第3章 よりよく書く](./03-better/README.md)
+### 第3章 よりよく書く
 
 1. [URLSearchParams に置き換える](./03-better/01-url-search-params/LECTURE.md)
 2. [リンクを要素として作る](./03-better/02-create-link/LECTURE.md)
 3. [フォームの submit を使う](./03-better/03-form-submit/LECTURE.md)
 4. [FormData でまとめて取り出す](./03-better/04-form-data/LECTURE.md)
 
-### [第4章 1つの画面に複数のフォームを並べる](./04-multiple-forms/README.md)
+### 第4章 1つの画面に複数のフォームを並べる
 
 1. [同じ画面に2つ目のフォームを足す](./04-multiple-forms/01-second-form/LECTURE.md)
 2. [3つ目を足して仕上げる](./04-multiple-forms/02-third-form/LECTURE.md)
